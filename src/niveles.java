@@ -3,9 +3,9 @@ import java.util.ArrayList;
 
 public class niveles {
     public String nivelName;
-    public String grados;
+    public ArrayList grados;
 
-    public niveles(String nivelName, String grados) {
+    public niveles(String nivelName, ArrayList grados) {
         this.nivelName = nivelName;
         this.grados = grados;
     }
@@ -22,7 +22,7 @@ public class niveles {
         return grados;
     }
 
-    public void setGrados(String grados) {
+    public String AddGrado() {
         this.grados = grados;
     }
 
