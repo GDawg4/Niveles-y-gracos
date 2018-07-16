@@ -1,34 +1,28 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+
+import java.util.List;
 
 public class niveles {
-    public String nivelName;
-    public ArrayList grados;
+    public String nombreNivel;
+    public List<grados> gradosColegio;
 
-    public niveles(String nivelName, ArrayList grados) {
-        this.nivelName = nivelName;
-        this.grados = grados;
+    public niveles(String nombreNivel, List<grados> grados) {
+        this.nombreNivel = nombreNivel;
+        this.gradosColegio = grados;
     }
 
-    public String getNivelName() {
-        return nivelName;
+    public String getNombreNivel() {
+        return nombreNivel;
     }
 
-    public void setNivelName(String nivelName) {
-        this.nivelName = nivelName;
+    public void setNombreNivel(String nombreNivel) {
+        this.nombreNivel = nombreNivel;
     }
 
-    public String getGrados() {
-        return grados;
+    public List<grados> getGrados() {
+        return gradosColegio;
     }
 
-    public String AddGrado() {
-        this.grados = grados;
-    }
-
-    @Override
-    public String toString() {
-        return "Nivel: " + this.nivelName
-                + "\n Grados:" + this.grados;
+    public void addGrados(grados grados) {
+        gradosColegio.add(grados);
     }
 }
