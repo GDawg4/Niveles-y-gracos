@@ -14,15 +14,27 @@ public class main{
             ingreso = buscador.nextLine();
             switch (ingreso){
                 case "1":
-                    Scanner buscador1 = new Scanner(System.in);
+                    String nombreNuevoN;
+                    buscador = new Scanner(System.in);
                     System.out.println("Ingrese el nombre del nuevo nivel");
-                    ingreso = buscador1.nextLine();
+                    nombreNuevoN = buscador.nextLine();
                     System.out.println(ingreso);
                     List<grados> nuevaLista = new ArrayList<>();
-                    niveles nivel1 = new niveles("Hola", nuevaLista);
+                    niveles nivel1 = new niveles(nombreNuevoN, nuevaLista);
                     nivelesActuales.add(nivel1);
-                    System.out.println(nivelesActuales);
-                //case "3":
+                    break;
+                case "2":
+                    String buscarNivel;
+                    String agregarNivel;
+                    Scanner buscador1 = new Scanner(System.in);
+                    System.out.println("A qué nivel desea agregar un grado?");
+                    buscarNivel = buscador1.nextLine();
+                    for(niveles nivelBusqueda : nivelesActuales){
+                        if (buscarNivel.equals( nivelBusqueda.getNombreNivel())){
+                            System.out.println("Nivel encontrado!");
+                            break;
+                        }
+                    }
             }
         }
     }

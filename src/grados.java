@@ -24,4 +24,9 @@ public class grados {
     public void setEstudiantes(List<estudiante> estudiantes) {
         this.estudiantes = estudiantes;
     }
+
+    @Override
+    public String toString() {
+        return "El grado " + nombreGrado + "tiene los estudiantes " + estudiantes;
+    }
 }

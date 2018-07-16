@@ -25,4 +25,10 @@ public class niveles {
     public void addGrados(grados grados) {
         gradosColegio.add(grados);
     }
+
+    @Override
+    public String toString() {
+        return "El nivel " + nombreNivel + "tiene los grados" + gradosColegio;
+    }
 }
+
