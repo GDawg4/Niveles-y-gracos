@@ -28,7 +28,8 @@ public class niveles {
 
     @Override
     public String toString() {
-        return "El nivel " + nombreNivel + "tiene los grados" + gradosColegio;
+        return "El nivel " + nombreNivel + " tiene los grados"
+                + gradosColegio;
     }
 }
 

@@ -21,12 +21,13 @@ public class grados {
         return estudiantes;
     }
 
-    public void setEstudiantes(List<estudiante> estudiantes) {
-        this.estudiantes = estudiantes;
+    public void addEstudiantes(estudiante nuevo) {
+        estudiantes.add(nuevo);
     }
 
     @Override
     public String toString() {
-        return "El grado " + nombreGrado + "tiene los estudiantes " + estudiantes;
+        return "El grado " + nombreGrado + " tiene los estudiantes "
+                + estudiantes;
     }
 }
