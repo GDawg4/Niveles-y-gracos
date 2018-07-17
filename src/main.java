@@ -61,7 +61,7 @@ public class main{
                         if (buscarNivelG.equals( nivelBusqueda.getNombreNivel())){
                             buscador1 = new Scanner(System.in);
                             System.out.println("Nivel encontrado!");
-                            System.out.println(nivelBusqueda.toString());
+                            System.out.println(nivelBusqueda.toString().replace("[", "\n").replace("]", " "));
                             System.out.println("A qué grado desea agregar el estudiante?");
                             buscarGrado = buscador1.nextLine();
 
@@ -74,12 +74,13 @@ public class main{
                                     System.out.println("Cuál es el nombre del estudiante que desea ingresar?");
                                     nuevoEstudiante = buscador1.nextLine();
                                     estudiante Estudiante = new estudiante(nuevoEstudiante);
+                                    gradosBusqueda.addEstudiantes(Estudiante);
                                     System.out.println("Estudiante agregado!");
                                     break;
                                 }
-                             if (opcion2Grados){
-                                 System.out.println("Grado no encontrado, favor intentar nuevamente");
-                             }
+                                if (opcion2Grados) {
+                                    System.out.println("Grado no encontrado, favor intentar nuevamente");
+                                }
                             }
                         }
                         break;
@@ -88,10 +89,59 @@ public class main{
                         System.out.println("No se encontró este nivel, favor intentar nuevamente");
                     }
                     break;
-                case "A":
-                    for (niveles buscar: nivelesActuales){
-                        System.out.println(buscar.toString());
+                case "4":
+                    String nivelMostrar;
+                    Boolean otraOpcion = true;
+                    buscador1 = new Scanner(System.in);
+                    System.out.println("Ingrese el nivel que quiera mostrar");
+                    nivelMostrar = buscador1.nextLine();
+                    for (niveles NivelBusqueda : nivelesActuales){
+                        if (nivelMostrar.equals(NivelBusqueda.getNombreNivel())){
+                            System.out.println(NivelBusqueda.toString().replace("[", "\n").replace("]", " "));
+                            otraOpcion = false;
+                            break;
+                        }
                     }
+                    if (otraOpcion){
+                        System.out.println("Este sistema no exite, favor intentar nuevamente    ");
+                    }
+                    break;
+                case "5":
+                    String nivelMostrar2;
+                    String gradoMostrar;
+                    Boolean otraOpcion2 = true;
+                    buscador1 = new Scanner(System.in);
+                    System.out.println("Ingrese el nivel en el que se encuentra el grado que quiere mostrar");
+                    nivelMostrar2 = buscador1.nextLine();
+
+                    for(niveles nivelBusqueda : nivelesActuales){
+                        if (nivelMostrar2.equals( nivelBusqueda.getNombreNivel())){
+                            buscador1 = new Scanner(System.in);
+                            System.out.println("Nivel encontrado!");
+                            System.out.println(nivelBusqueda.toString().replace("[", "\n").replace("]", " "));
+                            System.out.println("Qué grado desea mostrar?");
+                            buscarGrado = buscador1.nextLine();
+
+                            for(grados gradosBusqueda : nivelBusqueda.getGrados()){
+                                if(buscarGrado.equals(gradosBusqueda.getNombreGrado())){
+                                    otraOpcion2 = false;
+                                    System.out.println("Grado encontrado!");
+                                    System.out.println(gradosBusqueda.toString().replace("[", "\n").replace("]", " "));
+                                    break;
+                                }
+                                if (otraOpcion2) {
+                                    System.out.println("Grado no encontrado, favor intentar nuevamente");
+                                }
+                            }
+                        }
+                        break;
+                    }
+                    if (otraOpcion2){
+                        System.out.println("No se encontró este nivel, favor intentar nuevamente");
+                    }
+                    break;
+                default:
+                    System.out.println("Instrucción no válida, favor intentar nuevamente");
             }
         }
     }

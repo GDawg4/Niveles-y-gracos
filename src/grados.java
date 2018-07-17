@@ -27,7 +27,7 @@ public class grados {
 
     @Override
     public String toString() {
-        return "El grado " + nombreGrado + " tiene los estudiantes "
+        return "El grado " + nombreGrado + " tiene los estudiantes: "
                 + estudiantes;
     }
 }

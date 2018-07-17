@@ -12,4 +12,9 @@ public class estudiante {
     public void setNombreEstudiante(String nombreEstudiante) {
         this.nombreEstudiante = nombreEstudiante;
     }
+
+    @Override
+    public String toString() {
+        return nombreEstudiante;
+    }
 }

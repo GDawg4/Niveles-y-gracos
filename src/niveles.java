@@ -14,9 +14,6 @@ public class niveles {
         return nombreNivel;
     }
 
-    public void setNombreNivel(String nombreNivel) {
-        this.nombreNivel = nombreNivel;
-    }
 
     public List<grados> getGrados() {
         return gradosColegio;
@@ -28,7 +25,7 @@ public class niveles {
 
     @Override
     public String toString() {
-        return "El nivel " + nombreNivel + " tiene los grados"
+        return "El nivel " + nombreNivel + " tiene los grados:"
                 + gradosColegio;
     }
 }
