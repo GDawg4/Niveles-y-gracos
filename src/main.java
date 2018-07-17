@@ -1,18 +1,21 @@
-
+//Rodrigo Garoz 18102
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class main{
-
     public static void main (String[] args) {
+        //lista con todos los niveles creados
         List<niveles> nivelesActuales = new ArrayList<>();
         String ingreso = "";
+        // si ingreso es 6, se termina el programa
         while(!ingreso.equals("6")){
             Scanner buscador = new Scanner(System.in);
             System.out.println("Qué desea hacer?");
             ingreso = buscador.nextLine();
             switch (ingreso){
+
+                //en el primer caso, se agrega un nivel a la lista principal
                 case "1":
                     String nombreNuevoN;
                     buscador = new Scanner(System.in);
@@ -23,6 +26,8 @@ public class main{
                     niveles nivel1 = new niveles(nombreNuevoN, nuevaLista);
                     nivelesActuales.add(nivel1);
                     break;
+
+                //en este caso, se busca si existe el nivel y se agrega un nuevo grado
                 case "2":
                     String buscarNivel;
                     String agregarGrado;
@@ -44,10 +49,13 @@ public class main{
                             break;
                         }
                     }
+                    //en caso no se encuentre ninguna instancia con ese nombre, se imprime mensaje de error
                     if (opcion2){
                         System.out.println("No se encontró este nivel, favor intentar nuevamente");
                     }
                     break;
+
+                //Se repite el proceso de número 2, pero con un ciclo interno extra, para buscar grados en el nivel
                 case "3":
                     String buscarNivelG;
                     String buscarGrado;
@@ -89,6 +97,8 @@ public class main{
                         System.out.println("No se encontró este nivel, favor intentar nuevamente");
                     }
                     break;
+
+                //Se pide el nombre del nivel a mostrar y se imprime toda la información que contiene
                 case "4":
                     String nivelMostrar;
                     Boolean otraOpcion = true;
@@ -106,6 +116,8 @@ public class main{
                         System.out.println("Este sistema no exite, favor intentar nuevamente    ");
                     }
                     break;
+
+                //Se repite el proceso del número 4, pero con un ciclo interno exta
                 case "5":
                     String nivelMostrar2;
                     String gradoMostrar;
@@ -120,10 +132,10 @@ public class main{
                             System.out.println("Nivel encontrado!");
                             System.out.println(nivelBusqueda.toString().replace("[", "\n").replace("]", " "));
                             System.out.println("Qué grado desea mostrar?");
-                            buscarGrado = buscador1.nextLine();
+                            gradoMostrar = buscador1.nextLine();
 
                             for(grados gradosBusqueda : nivelBusqueda.getGrados()){
-                                if(buscarGrado.equals(gradosBusqueda.getNombreGrado())){
+                                if(gradoMostrar.equals(gradosBusqueda.getNombreGrado())){
                                     otraOpcion2 = false;
                                     System.out.println("Grado encontrado!");
                                     System.out.println(gradosBusqueda.toString().replace("[", "\n").replace("]", " "));
@@ -140,6 +152,13 @@ public class main{
                         System.out.println("No se encontró este nivel, favor intentar nuevamente");
                     }
                     break;
+
+                //6 cierra el programa
+                case "6":
+                    System.out.println("Gracias por utilizar nuestro sistema");
+                    break;
+
+                //cualquier otro caso, mostrar mensaje de error
                 default:
                     System.out.println("Instrucción no válida, favor intentar nuevamente");
             }

@@ -1,5 +1,5 @@
 import java.util.List;
-
+//Argumentos de grados
 public class grados {
     public String nombreGrado;
     private List<estudiante> estudiantes;
@@ -13,14 +13,10 @@ public class grados {
         return nombreGrado;
     }
 
-    public void setNombreGrado(String nombreGrado) {
-        this.nombreGrado = nombreGrado;
-    }
-
     public List<estudiante> getEstudiantes() {
         return estudiantes;
     }
-
+//Agregar un estudiante a este grado
     public void addEstudiantes(estudiante nuevo) {
         estudiantes.add(nuevo);
     }

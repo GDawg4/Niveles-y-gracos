@@ -1,6 +1,6 @@
 
 import java.util.List;
-
+//Argumentos de niveles
 public class niveles {
     public String nombreNivel;
     public List<grados> gradosColegio;
@@ -18,7 +18,7 @@ public class niveles {
     public List<grados> getGrados() {
         return gradosColegio;
     }
-
+//agregar un grado a los niveles
     public void addGrados(grados grados) {
         gradosColegio.add(grados);
     }
